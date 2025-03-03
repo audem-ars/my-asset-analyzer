@@ -8,27 +8,6 @@ const nextConfig = {
   },
   images: {
     unoptimized: true
-  },
-  experimental: {
-    appDir: true,
-  },
-  webpack: (config) => {
-    config.resolve = {
-      ...config.resolve,
-      fallback: {
-        fs: false,
-        net: false,
-        tls: false,
-        "node:buffer": false,
-        "node:util": false,
-        "node:stream": false,
-        "node:events": false
-      },
-      alias: {
-        '@': '.'
-      }
-    };
-    return config;
   }
 };
 
