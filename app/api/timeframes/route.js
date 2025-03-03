@@ -1,15 +1,14 @@
-// app/api/timeframes/route.js
 import { NextResponse } from 'next/server';
-import { fetchMultiTimeframeData } from '../../stockUtils';
+import { fetchMultiTimeframeData } from '../../../components/stockUtils';
 
 export async function GET(request) {
   const { searchParams } = new URL(request.url);
   const symbol = searchParams.get('symbol');
-
+  
   if (!symbol) {
     return NextResponse.json({ error: 'Symbol is required' }, { status: 400 });
   }
-
+  
   try {
     const data = await fetchMultiTimeframeData(symbol);
     return NextResponse.json(data);
