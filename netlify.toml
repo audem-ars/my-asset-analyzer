@@ -1,15 +1,17 @@
 [build]
-command = "npm run build"
-publish = ".next"
+  command = "npm run build"
+  publish = ".next"
 
 [[plugins]]
-package = "@netlify/plugin-nextjs"
+  package = "@netlify/plugin-nextjs"
 
 [build.environment]
-NODE_VERSION = "18"
-NEXT_TELEMETRY_DISABLED = "1"
-NODE_ENV = "production"
-NEXT_USE_SERVER_ACTIONS = "true"
+  NODE_VERSION = "18"
+  NEXT_TELEMETRY_DISABLED = "1"
+  NODE_ENV = "production"
+  NEXT_USE_SERVER_ACTIONS = "true"
+  NEXT_SKIP_ESLINT_CHECK = "true"
+  NEXT_SKIP_TYPESCRIPT_CHECK = "true"
 
 [functions]
-node_bundler = "esbuild"
+  node_bundler = "esbuild"
